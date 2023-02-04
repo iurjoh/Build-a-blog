@@ -1,10 +1,36 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Iuri Johansson,
+Create a Django project
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Install gunicorn, dj_database_url, psycopg2 and cloudinary to create the necessary libraries within the project.
+pip3 install 'django<4' gunicorn
+pip3 install dj_database_url==0.5.0 psycopg2
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Create requirements.txt to update the list.
+
+Create an app called blog to actually start the project.
+
+Perform migration to update the project.
+
+Test the created app using the runserver command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Gitpod Reminders
 
