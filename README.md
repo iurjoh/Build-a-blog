@@ -33,11 +33,16 @@ Create a Procfile and deploy app with Heroku.
 
 Test if deployment is successful.
 
-## Creating a Database Diagram
+## Create a Database Diagram
 In this project, the diagram with MVT architecture is used, that is, MODEL - VIEW - TEMPLATES, described in the image below %%%%%%%%%%%%%%%%%%%%%%%%%.
 
-## Creating a Entity Relationship Diagram
+## Create a Entity Relationship Diagram
 To maintain organization and standard, during the process of creating the database I use the Entity Relationship Diagram, as seen in the images.
+
+## Create Models
+Using the diagrams above allows the creation of two initial modes, Post and Comment. Then, as you should do after every change in models, you must use the commands "python3 manage.py makemigrations" and "python3 manage.py migrate" to migrate all changes to the database
+
+## Create a Admin site
 
 ## ERRORS
 #Solved
