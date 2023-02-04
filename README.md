@@ -1,5 +1,7 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+## 1st Commit
+
 Create a Django project
 
 Install gunicorn, dj_database_url, psycopg2 and cloudinary to create the necessary libraries within the project.
@@ -13,6 +15,34 @@ Create an app called blog to actually start the project.
 Perform migration to update the project.
 
 Test the created app using the runserver command.
+
+## 2nd commit
+
+Create a new app on Heroku.
+
+Create a new database using ElephantSQL.
+
+Updating env.py and settings.py files preparing prjote for deployment.
+
+## 3rd commit
+Setup cloudinary.
+
+Create 3 new folders in main branch: meida, static and templates.
+
+Create a Procfile and deploy app with Heroku.
+
+Test if deployment is successful.
+
+## Creating a Database Diagram
+In this project, the diagram with MVT architecture is used, that is, MODEL - VIEW - TEMPLATES, described in the image below %%%%%%%%%%%%%%%%%%%%%%%%%.
+
+## Creating a Entity Relationship Diagram
+To maintain organization and standard, during the process of creating the database I use the Entity Relationship Diagram, as seen in the images.
+
+## ERRORS
+#Solved
+Updating env.py and settings.py to match new secret keys to be able to migrate database to Elephant SQL
+SECRET_KEY = os.environ.get('SECRET_KEY', 'the_@nswer_is_42!')
 
 
 
