@@ -43,6 +43,11 @@ To maintain organization and standard, during the process of creating the databa
 Using the diagrams above allows the creation of two initial modes, Post and Comment. Then, as you should do after every change in models, you must use the commands "python3 manage.py makemigrations" and "python3 manage.py migrate" to migrate all changes to the database
 
 ## Create a Admin site
+"python3 manage.py createsuperuser" to create a new admin panel
+
+## Install summernote
+"pip3 install django-summernote" and update requirements.txt 
+
 
 ## ERRORS
 #Solved
