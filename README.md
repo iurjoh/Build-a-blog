@@ -52,6 +52,10 @@ Using the diagrams above allows the creation of two initial modes, Post and Comm
 "pip3 install django-allauth" to be able of use a strong authorization and provide more options to the user.
 
 
+## install Crispy forms
+pip3 install django-crispy-forms to use this library and help with formatting of comments.
+
+
 ## ERRORS
 #Solved
 Updating env.py and settings.py to match new secret keys to be able to migrate database to Elephant SQL
