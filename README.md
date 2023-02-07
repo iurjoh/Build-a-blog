@@ -46,7 +46,10 @@ Using the diagrams above allows the creation of two initial modes, Post and Comm
 "python3 manage.py createsuperuser" to create a new admin panel
 
 ## Install summernote
-"pip3 install django-summernote" and use "pip3 freeze --local requirements.txt" to update requirements.txt. 
+"pip3 install django-summernote" and use "pip3 freeze --local requirements.txt" to update requirements.txt.
+
+## Install allauth
+"pip3 install django-allauth" to be able of use a strong authorization and provide more options to the user.
 
 
 ## ERRORS
