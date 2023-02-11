@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #F2E4BB;
 }
 
 .brand {
@@ -9,8 +9,8 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
+.red-a {
+    color: #ff3030;
 }
 
 .thin {
@@ -18,15 +18,15 @@ body {
 }
 
 .light-bg {
-    background-color: #fff;
+    background-color: #F2E4BB;
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #3B5E8C;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #F2E4BB;
 }
 
 .card {
@@ -139,4 +139,10 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.btn-share {
+    color: #445261;
+    border: none;
+    background: transparent;
 }
