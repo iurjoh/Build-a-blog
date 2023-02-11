@@ -51,10 +51,11 @@ Using the diagrams above allows the creation of two initial modes, Post and Comm
 ## Install allauth
 "pip3 install django-allauth" to be able of use a strong authorization and provide more options to the user.
 
-
 ## install Crispy forms
 pip3 install django-crispy-forms to use this library and help with formatting of comments.
 
+## Install Django Social Share
+pip3 install django-social-share to use this library and provide a share method to the user.
 
 ## ERRORS
 #Solved
