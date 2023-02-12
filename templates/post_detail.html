@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
+{% load social_share %}
 
 <div class="masthead">
     <div class="container">
@@ -32,7 +33,6 @@
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -57,6 +57,39 @@
                             <!-- Our total_comments variable goes before the closing strong tag -->
                             {{ total_comments }}</strong>
                         {% endwith %}
+                    </div>
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_share' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank">
+                                    <i class="fa fa-facebook"></i> Share to Facebook:
+                                </a>
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                        <!-- The number of likes goes before the closing strong tag -->
+                        <span class="text-secondary">{{ post.number_of_likes }}</span>
+                        </strong>
+                    </div>
+                    
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_share' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% post_to_twitter "Look at this post:" object_or_url "Post to Twitter" %}
+                                {% post_to_linkedin object_or_url %}
+                                {% post_to_whatsapp object_or_url "Share via WhatsApp" %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"></span>
+                            {% endif %}
+                        <!-- The number of shares goes before the closing strong tag -->
+                        <span class="text-secondary">{{ post.number_of_shares }}</span>
+                        </strong>
                     </div>
                 </div>
             </div>
