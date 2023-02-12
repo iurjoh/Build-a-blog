@@ -64,7 +64,7 @@
                             <form class="d-inline" action="{% url 'post_share' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 <!-- <div class="sharethis-inline-share-buttons"></div> -->
-                                <!-- <spans class="text-secondary">Share:</spans> -->
+                                <spans class="text-secondary">Share:</spans>
                                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                     <button type="button" class="btn btn-secondary">
                                         {% post_to_twitter object_or_url "Twitter" %}
@@ -126,7 +126,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-secondary btn-lg">Submit</button>
                 </form>
                 {% endif %}
                 {% endif %}
