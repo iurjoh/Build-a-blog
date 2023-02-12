@@ -31,7 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["mb2test.herokuapp.com", "localhost", 'f98a-188-149-220-116.eu.ngrok.io']
+ALLOWED_HOSTS = [
+    "mb2test.herokuapp.com",
+    "localhost",
+    'e539-193-150-228-177.eu.ngrok.io',
+]
 
 # Application definition
 
