@@ -171,7 +171,11 @@ Python syntax checker from Extends Class and Python style guide checker from pyc
 
 Flake8 used and do not show any serious problems found other than "unused" or "line too long".
 
+CI Python Linter from Code Institute was used to test if my python code complies with PEP8 and succeeded.
+
 No errors were returned from both.
+
+![CI Python Linter](./media/ci_python_linter.JPG)
 
 ![Python Terminal](./media/python_code_errors.JPG)
 
@@ -186,18 +190,17 @@ No errors were returned from both.
 This blog was deployed using Code Institute's mock terminal for Heroku.
 - First fork or clone this repository
 - Create a new Heroku app
-- Set the buildbacks to Python and NodeJS in that order
 - Link the Heroku app to the GitHub repository
 - Click on deploy 
 
-The link to the deployed blog at Heroku is: https://git.heroku.com/iurjoh-treasure-hunt.git/###############################################################
+The link to the deployed blog at Heroku is: https://iurjoh-devblog.herokuapp.com/
 
 The full file was also deployed in my GitHub repository. The steps are as follows:
 - In the GitHub repository, click on Settings tab;
 - Navigate to the menu on the left side and select Pages;
 - Set the source in the Build and deployment item as "Deploy from a branch". Then, in the Branch item, the Main option was chosen, /(root) folder and finishing the settings with the Save button.
 
-The link to the deployed website at GitHub is: https://iurjoh.github.io/Treasure-Hunt/###############################################################
+The link to the deployed website at GitHub is: https://github.com/iurjoh/Build-a-blog/
 
 # Credits
 Here will be the sites that helped me find everything I needed to develop my work, including research and material sources.
@@ -212,6 +215,7 @@ Sites such as:
 - [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the blog;
 - [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
 - [Flake8](https://flake8.pycqa.org/en/latest/) used to test my pyhton code at local terminal;
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) used to test if my pyhton code it complies with PEP8;
 - [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
 - [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site;
 - [Django Documentation](https://docs.djangoproject.com/en/4.1/) to access all the documentation implemented in this project including models, views, etc;
