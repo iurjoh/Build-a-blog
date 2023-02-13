@@ -40,6 +40,18 @@ In this blog a base template from the Code Institute was used, adding to it code
 - Fixing Bugs
 - Final Deployment
 
+## Installed libraries, APIs and other services
+
+- Cloudinary
+- Django Allauth
+- Django Bootstrap Icons
+- Django Crispy Forms
+- Django Social Share
+- Django Summernote
+- Gunicorn
+- Oauthlib
+- Psycopg2
+
 # Features
 ## Existing Features
 ### Authentication and Authorization
@@ -83,6 +95,18 @@ Warning messages are displayed when the blog user signs up, sign in, sign out an
 All posts already published are grouped on the screen, which at its maximum capacity will display 6 posts on a larger screen and in its smaller screen version will display each post on top of the other.
 
 ![Post Grid 6](./media/post_grid_6.JPG)
+
+### Share buttons
+
+To add interactivity to the user, a bar with four buttons is available in the post for sharing through messaging applications.
+
+The user can choose to share the post being read through Twitter, WhatsApp, Telegram or Reddit.
+
+Each button has the icon and colors of the respective messenger for easy identification and simple use.
+
+After clicking on the chosen messenger, the user is taken to a page of the given company where he will login to continue. Then you will be given the opportunity to share the site where the post is contained and then the submission can be carried out.
+
+![Share Buttons](./media/share_buttons.JPG)
 
 ### Fotter
 
@@ -183,12 +207,14 @@ Sites such as:
 - [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
 - [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
 - [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site;
-- [Django Social Share](https://pypi.org/project/django-social-share/) to access all the documentation to implement the share button function;
+- [Django Documentation](https://docs.djangoproject.com/en/4.1/) to access all the documentation implemented in this project including models, views, etc;
+- [Django Social Share](https://pypi.org/project/django-social-share/) to access all the documentation to implement share buttons function;
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) to access all the documentation to implement authentication and authorization functions;
 - [Django Bootstrap Icons](https://pypi.org/project/django-bootstrap-icons/) to access all the documentation to implement the use of the icons that are inside the share buttons;
 - [Font Awesome](https://fontawesome.com/icons) to get icons for this project;
+- [Color Hunt](https://colorhunt.co/palettes/) for inspiration about color palettes;
 - [Bootstrap Icons](https://icons.getbootstrap.com/) to get icons for this project;
-- [Bootstrap Documentation](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to access all the documentation to use many of Bootstrap shortcuts;
-
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to access all the documentation to use many of Bootstrap shortcuts.
 
 ## Media
 
@@ -196,69 +222,3 @@ Sites such as:
 
 ## Acknowledgements
 - My mentor for continuous helpful feedback.
-
-
-
-
-
-## 1st Commit
-
-Create a Django project
-
-Install gunicorn, dj_database_url, psycopg2 and cloudinary to create the necessary libraries within the project.
-pip3 install 'django<4' gunicorn
-pip3 install dj_database_url==0.5.0 psycopg2
-
-Create requirements.txt to update the list.
-
-Create an app called blog to actually start the project.
-
-Perform migration to update the project.
-
-Test the created app using the runserver command.
-
-## 2nd commit
-
-Create a new app on Heroku.
-
-Create a new database using ElephantSQL.
-
-Updating env.py and settings.py files preparing prjote for deployment.
-
-## 3rd commit
-Setup cloudinary.
-
-Create 3 new folders in main branch: meida, static and templates.
-
-Create a Procfile and deploy app with Heroku.
-
-Test if deployment is successful.
-
-## Create a Database Diagram
-In this project, the diagram with MVT architecture is used, that is, MODEL - VIEW - TEMPLATES, described in the image below %%%%%%%%%%%%%%%%%%%%%%%%%.
-
-## Create a Entity Relationship Diagram
-To maintain organization and standard, during the process of creating the database I use the Entity Relationship Diagram, as seen in the images.
-
-## Create Models
-Using the diagrams above allows the creation of two initial modes, Post and Comment. Then, as you should do after every change in models, you must use the commands "python3 manage.py makemigrations" and "python3 manage.py migrate" to migrate all changes to the database
-
-## Create a Admin site
-"python3 manage.py createsuperuser" to create a new admin panel
-
-## Install summernote
-"pip3 install django-summernote" and use "pip3 freeze --local requirements.txt" to update requirements.txt.
-
-## Install allauth
-"pip3 install django-allauth" to be able of use a strong authorization and provide more options to the user.
-
-## install Crispy forms
-pip3 install django-crispy-forms to use this library and help with formatting of comments.
-
-## Install Django Social Share
-pip3 install django-social-share to use this library and provide a share method to the user.
-
-## ERRORS
-#Solved
-Updating env.py and settings.py to match new secret keys to be able to migrate database to Elephant SQL
-SECRET_KEY = os.environ.get('SECRET_KEY', 'the_@nswer_is_42!')
