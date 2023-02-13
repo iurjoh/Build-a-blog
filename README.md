@@ -1,6 +1,6 @@
 # Build-a-Blog
 
-Visit the blog [here](https://iurjoh-treasure-hunt.herokuapp.com/)
+Visit the blog [here](https://iurjoh-devblog.herokuapp.com/)
 
 This is a blog made to demonstrate my basic knowledge acquired in the Code Institute's Full Stack developer course. In this project a fully functional blog was created using Django and its libraries, Bootsrap and other tools.
 
@@ -137,11 +137,9 @@ After writing the comment, the user must click on the submit button and then it 
 ![Comments Box](./media/comments_box.JPG)
 
 ## Features to Increment
-- Add a vs. CPU mode to play against the computer.
-- Add more competitiveness to the game with an accumulative score display that will be updated at each end of the match.
-- Add a mode with a countdown timer for each player's move, where if the time runs out, the player will lose his turn or have his move made by the computer.
-- Add a stopwatch to show the elapsed time in each match.
-- Add a game mode that saves wins in record time.
+- Option to login through social networks and other services, like GMail, Outlook, Github, etc.
+- More options for interaction with the content for the user, such as being able to interact with gifs, emoticons and images through the comment box.
+- Added an area for the Author's profile, with a brief description and photo.
 
 # Tests
 
@@ -155,21 +153,21 @@ No errors were returned from both.
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 # Deployment
-This game was deployed using Code Institute's mock terminal for Heroku.
+This blog was deployed using Code Institute's mock terminal for Heroku.
 - First fork or clone this repository
 - Create a new Heroku app
 - Set the buildbacks to Python and NodeJS in that order
 - Link the Heroku app to the GitHub repository
 - Click on deploy 
 
-The link to the deployed game at Heroku is: https://git.heroku.com/iurjoh-treasure-hunt.git
+The link to the deployed blog at Heroku is: https://git.heroku.com/iurjoh-treasure-hunt.git/###############################################################
 
 The full file was also deployed in my GitHub repository. The steps are as follows:
 - In the GitHub repository, click on Settings tab;
 - Navigate to the menu on the left side and select Pages;
 - Set the source in the Build and deployment item as "Deploy from a branch". Then, in the Branch item, the Main option was chosen, /(root) folder and finishing the settings with the Save button.
 
-The link to the deployed website at GitHub is: https://iurjoh.github.io/Treasure-Hunt/
+The link to the deployed website at GitHub is: https://iurjoh.github.io/Treasure-Hunt/###############################################################
 
 # Credits
 Here will be the sites that helped me find everything I needed to develop my work, including research and material sources.
@@ -181,11 +179,16 @@ Sites such as:
 - [Code Institute](https://learn.codeinstitute.net/) to review material of study explanatory videos and guides on how to set up a complete website;
 - [GitHub](https://github.com/) to better understand other projects;
 - [Google](https://www.google.com) for more information on subjects related to the that I had to study during the creation of the site;
-- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) to understand concepts about Python;
-- [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the game;
+- [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the blog;
 - [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
 - [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
-- [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site.
+- [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site;
+- [Django Social Share](https://pypi.org/project/django-social-share/) to access all the documentation to implement the share button function;
+- [Django Bootstrap Icons](https://pypi.org/project/django-bootstrap-icons/) to access all the documentation to implement the use of the icons that are inside the share buttons;
+- [Font Awesome](https://fontawesome.com/icons) to get icons for this project;
+- [Bootstrap Icons](https://icons.getbootstrap.com/) to get icons for this project;
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to access all the documentation to use many of Bootstrap shortcuts;
+
 
 ## Media
 
