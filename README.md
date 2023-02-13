@@ -211,6 +211,7 @@ Sites such as:
 - [Google](https://www.google.com) for more information on subjects related to the that I had to study during the creation of the site;
 - [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the blog;
 - [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
+- [Flake8](https://flake8.pycqa.org/en/latest/) used to test my pyhton code at local terminal;
 - [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
 - [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site;
 - [Django Documentation](https://docs.djangoproject.com/en/4.1/) to access all the documentation implemented in this project including models, views, etc;
