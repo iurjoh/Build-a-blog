@@ -169,12 +169,18 @@ After writing the comment, the user must click on the submit button and then it 
 
 Python syntax checker from Extends Class and Python style guide checker from pycodestyle 2.9.1 were used to test, verify and validate code written in python.
 
+Flake8 used and do not show any serious problems found other than "unused" or "line too long".
+
 No errors were returned from both.
 
-![Python Results](./assets/images/test.JPG)
+![Python Terminal](./media/python_code_errors.JPG)
+
+![Flake8](./media/flake8_python_test.JPG)
 
 # Languages Used
-- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language));
+- [HTML5](https://en.wikipedia.org/wiki/HTML);
+- [CSS3](https://en.wikipedia.org/wiki/CSS).
 
 # Deployment
 This blog was deployed using Code Institute's mock terminal for Heroku.
