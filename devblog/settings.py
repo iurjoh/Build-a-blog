@@ -34,7 +34,7 @@ DEBUG = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
-    "mb2test.herokuapp.com",
+    "iurjoh-devblog.herokuapp.com",
     "localhost",
     'localhost',
 ]
