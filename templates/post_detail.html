@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
-{%load social_share %}
+{%load social_share %} {% load bootstrap_icons %}
 
 <div class="masthead">
   <div class="container">
@@ -94,7 +94,13 @@
                   {% post_to_twitter object_or_url "Twitter" %}
                 </button>
                 <button type="button" class="btn btn-success">
-                  {% post_to_whatsapp object_or_url "WhatsApp" %}
+                  {% post_to_whatsapp object_or_url "Whatsapp" %}
+                </button>
+                <button type="button" class="btn btn-primary">
+                  {% post_to_telegram "Telegram" %}
+                </button>
+                <button type="button" class="btn btn-danger">
+                  {% post_to_reddit "Reddit" %}
                 </button>
               </div>
             </form>

@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'django_summernote',
     'django_social_share',
+    'django_bootstrap_icons',
     'blog',
 ]
 
