@@ -1,4 +1,202 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Build-a-Blog
+
+Visit the blog [here](https://iurjoh-treasure-hunt.herokuapp.com/)
+
+This is a blog made to demonstrate my basic knowledge acquired in the Code Institute's Full Stack developer course. In this project a fully functional blog was created using Django and its libraries, Bootsrap and other tools.
+
+![Build-a-Blog](./media/Build-a-blog-mockup.JPG)
+
+# What exactly is Build-a-Blog?
+
+It is a blog that has in its posts the step by step of how I felt when I was developing this project. So in a way it is a diary of how I felt about the project at each step. Thus, other young developers can sign up, and then have access to the posts, being able to read, interact with the content through likes, comments and even share the posts with whoever they want.
+
+# Project Prerequisites
+
+In this blog a base template from the Code Institute was used, adding to it code written in HTML, CSS, Python, use of Cloudinary, Django, Allauth, Bootstrap, Crispy forms, Social share and Summernote, Gunicorn, Pscopg2, ElephantSQL, Heroku.
+
+# Development Stages
+
+- Create a Django Project Checklist
+- Create an Empty Django Project
+- Create a Heroku App
+- Create a Database
+- Create an env.py File
+- Modifying settings.py
+- Setting Heroku Config Vars
+- First Deployment
+- Create a Database Diagram
+- Create a Database Models
+- Create an Admin Site
+- Create Basic Views
+- Create Basic Templates
+- Conneting URLs
+- Create a Post Detail View
+- Implement of Authentication and Authorization
+- Create a Comment Function
+- Create a Like Function
+- Create a Post Share Function
+- Create Warning Messages
+- Test Blog
+- Fixing Bugs
+- Final Deployment
+
+# Features
+## Existing Features
+### Authentication and Authorization
+
+These two processes are important and bring security to the blog. To implement these functions, Allauth was used, which as described on its website as "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
+
+### Sign Up, Login and Logout
+
+Therefore, Allauth allows the blog to require users to register using a basic form, and after that they can sign in and start interacting with the site in a secure way. It also allows the administrator (logged in as such) to keep all blog functions secure, such as deleting offensive comments. So to use the blog it is necessary to sign up, to sign in, and once logged in it is possible to sign out.
+
+![Sign Up](./media/signin.JPG)
+
+![Sign In](./media/login.JPG)
+
+![Sign Out](./media/logout.JPG)
+
+### Header & Menu
+
+The header presents the name of the blog in a stylized way, two tabs for easy access to home and Login/Logout and a brief description of what the blog is about in the right corner.
+
+![Header](./media/Header%20and%20menu.JPG)
+
+### Toggler Button
+
+When using the blog on devices with small screens, the site displays the toggler button on the upper right. Then the tabs home, Login/logout and the description of the blog are inserted inside it.
+
+![Toggler](./media/Toggler.JPG)
+
+### Warning Messages
+
+Warning messages are displayed when the blog user signs up, sign in, sign out and when he leaves a comment on any of the posts.
+
+![Messages Sign In](./media/message_signin.JPG)
+
+![Messages Sign Out](./media/message_signout.JPG)
+
+![Messages Comment](./media/message_comment.JPG)
+
+### Post Area
+
+All posts already published are grouped on the screen, which at its maximum capacity will display 6 posts on a larger screen and in its smaller screen version will display each post on top of the other.
+
+![Post Grid 6](./media/post_grid_6.JPG)
+
+### Fotter
+
+In this section we find the details of the blog developer and links to their social networks.
+
+![Footer](./media/Footer.JPG)
+
+### Admin Site
+
+Here we can find everything that is available to the Admin, from the maintenance of emails, groups, users, comments, posts, attachments and registered sites, social accounts and other CRUD features (Create, Read, Update and Delete).
+
+All this is created through a base already delivered by Django and through the addition of other functionalities and libraries, new options are being added to the interface. For example, when we program the possibility of creating new posts, or we add a new form of authentication through other social networks, new areas are created within this panel.
+
+For better maintenance of all the functions of the admin site and to make everything even easier and more practical, there are also filters that can be used for searches through approved or not approved posts or comments, in addition to options by time, author, etc.
+
+![Footer](./media/admin_site.JPG)
+
+### Post Detail
+
+When clicking on one of the posts, the user is redirected to a page where the selected post is displayed in full, with its title, author, date and time of posting.
+
+The content of the post can then be read in its entirety.
+
+The amount of likes and comments made and accepted by the admin are also visible.
+
+A bar with options for sharing the post is available so that the user can then directly send the link to someone who wants to.
+
+A text box is displayed at the bottom right of the screen so that the user can interact with the author by leaving his comment.
+
+![Post Detail](./media/Post_detail.JPG)
+
+### Likes and Likes Counter
+
+A like button is available to the user logged in and viewing a specific post. By clicking on the heart icon, the user interacts with the author leaving the icon filled in red, and if he wants to undo the action, just click again and the icon will return to its initial empty state.
+
+A likes counter is visible for everyone to see the number of times users interacted positively with the content
+
+![Likes](./media/likes.JPG)
+
+### Comments, Comments Counter and Comments Box
+
+A comment counter is visible for everyone to see the number of times users have interacted by leaving a personal comment for the author of the post.
+
+The comment must be written using the comments box at the bottom right of the post.
+
+After writing the comment, the user must click on the submit button and then it will be up to the admin to analyze and approve the comment so that it can be seen in the comments area visible to all users.
+
+![Comments Counter](./media/comments_counter.JPG)
+
+![Comments Area](./media/comments_area.JPG)
+
+![Comments Box](./media/comments_box.JPG)
+
+## Features to Increment
+- Add a vs. CPU mode to play against the computer.
+- Add more competitiveness to the game with an accumulative score display that will be updated at each end of the match.
+- Add a mode with a countdown timer for each player's move, where if the time runs out, the player will lose his turn or have his move made by the computer.
+- Add a stopwatch to show the elapsed time in each match.
+- Add a game mode that saves wins in record time.
+
+# Tests
+
+Python syntax checker from Extends Class and Python style guide checker from pycodestyle 2.9.1 were used to test, verify and validate code written in python.
+
+No errors were returned from both.
+
+![Python Results](./assets/images/test.JPG)
+
+# Languages Used
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+# Deployment
+This game was deployed using Code Institute's mock terminal for Heroku.
+- First fork or clone this repository
+- Create a new Heroku app
+- Set the buildbacks to Python and NodeJS in that order
+- Link the Heroku app to the GitHub repository
+- Click on deploy 
+
+The link to the deployed game at Heroku is: https://git.heroku.com/iurjoh-treasure-hunt.git
+
+The full file was also deployed in my GitHub repository. The steps are as follows:
+- In the GitHub repository, click on Settings tab;
+- Navigate to the menu on the left side and select Pages;
+- Set the source in the Build and deployment item as "Deploy from a branch". Then, in the Branch item, the Main option was chosen, /(root) folder and finishing the settings with the Save button.
+
+The link to the deployed website at GitHub is: https://iurjoh.github.io/Treasure-Hunt/
+
+# Credits
+Here will be the sites that helped me find everything I needed to develop my work, including research and material sources.
+
+## Content
+
+Sites such as:
+- [Stack Overflow](https://stackoverflow.co/) were used at various times to clear up recurring doubts,
+- [Code Institute](https://learn.codeinstitute.net/) to review material of study explanatory videos and guides on how to set up a complete website;
+- [GitHub](https://github.com/) to better understand other projects;
+- [Google](https://www.google.com) for more information on subjects related to the that I had to study during the creation of the site;
+- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) to understand concepts about Python;
+- [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the game;
+- [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
+- [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
+- [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site.
+
+## Media
+
+- [Techsini](https://techsini.com/multi-mockup/index.php) Multi Device Website Mockup Generator was used to generate the image used in this README.md in the opening section.
+
+## Acknowledgements
+- My mentor for continuous helpful feedback.
+
+
+
+
 
 ## 1st Commit
 
@@ -61,122 +259,3 @@ pip3 install django-social-share to use this library and provide a share method 
 #Solved
 Updating env.py and settings.py to match new secret keys to be able to migrate database to Elephant SQL
 SECRET_KEY = os.environ.get('SECRET_KEY', 'the_@nswer_is_42!')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
