@@ -194,6 +194,8 @@ The use of debugging errors was always done within the project terminal and the 
 
 Most of these errors happened during the implementation of new urls, again mostly due to typos quickly corrected before starting to implement other new functionality.
 
+Only a few lines of JavaScript are present in this blog project and to test them JSFiddle was used and no errors or bugs were found.
+
 Python syntax checker from Extends Class and Python style guide checker from pycodestyle 2.9.1 were used to test, verify and validate code written in python.
 
 ![Python Terminal](./media/python_code_errors.JPG)
@@ -247,6 +249,7 @@ Sites such as:
 - [Flake8](https://flake8.pycqa.org/en/latest/) used to test my pyhton code at local terminal;
 - [CI Python Linter](https://pep8ci.herokuapp.com/#) used to test if my pyhton code it complies with PEP8;
 - [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
+- [JSFiddle](https://jsfiddle.net/) used to test my few lines of JavaScript in this project;
 - [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site;
 - [Django Documentation](https://docs.djangoproject.com/en/4.1/) to access all the documentation implemented in this project including models, views, etc;
 - [Django Social Share](https://pypi.org/project/django-social-share/) to access all the documentation to implement share buttons function;
