@@ -4,11 +4,17 @@ Visit the blog [here](https://iurjoh-devblog.herokuapp.com/)
 
 This is a blog made to demonstrate my basic knowledge acquired in the Code Institute's Full Stack developer course. In this project a fully functional blog was created using Django and its libraries, Bootsrap and other tools.
 
-![Build-a-Blog](./media/Build-a-blog-mockup.JPG)
+![Build-a-Blog](./media/build-a-blog-mockup.JPG)
 
 # What exactly is Build-a-Blog?
 
 It is a blog that has in its posts the step by step of how I felt when I was developing this project. So in a way it is a diary of how I felt about the project at each step. Thus, other young developers can sign up, and then have access to the posts, being able to read, interact with the content through likes, comments and even share the posts with whoever they want.
+
+# Languages Used
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [HTML5](https://en.wikipedia.org/wiki/HTML)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
 
 # Project Prerequisites
 
@@ -52,13 +58,25 @@ In this blog a base template from the Code Institute was used, adding to it code
 - Oauthlib
 - Psycopg2
 
-# Features
-## Existing Features
-### Authentication and Authorization
+## Auxiliary Tools
+- Entity Relationship Diagram
+
+![Entity Empty](./media/entity_relationship_diagram_empty.JPG) ![Entity Full](./media/entity_relationship_diagram_full.JPG)
+
+- MVT diagram (MODEL - VIEW - TEMPLATES)
+
+![MVT](./media/post5MVT.JPG)
+
+- User Stories
+
+![User Story 1](./media/post6.JPG) ![User Story 2](./media/post6_user_story.JPG)
+
+# Existing Features
+## Authentication and Authorization
 
 These two processes are important and bring security to the blog. To implement these functions, Allauth was used, which as described on its website as "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
 
-### Sign Up, Sign In and Sign Out
+## Sign Up, Sign In and Sign Out
 
 Therefore, Allauth allows the blog to require users to register using a basic form, and after that they can sign in and start interacting with the site in a secure way. It also allows the administrator (logged in as such) to keep all blog functions secure, such as deleting offensive comments. So to use the blog it is necessary to sign up, to sign in, and once logged in it is possible to sign out.
 
@@ -68,19 +86,19 @@ Therefore, Allauth allows the blog to require users to register using a basic fo
 
 ![Sign Out](./media/logout.JPG)
 
-### Header & Menu
+## Header & Menu
 
 The header presents the name of the blog in a stylized way, two tabs for easy access to home and Login/Logout and a brief description of what the blog is about in the right corner.
 
-![Header](./media/Header%20and%20menu.JPG)
+![Header and Menu](./media/header_and_menu.JPG)
 
-### Toggler Button
+## Toggler Button
 
 When using the blog on devices with small screens, the site displays the toggler button on the upper right. Then the tabs home, Login/logout and the description of the blog are inserted inside it.
 
 ![Toggler](./media/Toggler.JPG)
 
-### Warning Messages
+## Warning Messages
 
 Warning messages are displayed when the blog user signs up, sign in, sign out and when he leaves a comment on any of the posts.
 
@@ -90,13 +108,13 @@ Warning messages are displayed when the blog user signs up, sign in, sign out an
 
 ![Messages Comment](./media/message_comment.JPG)
 
-### Post Area
+## Post Area
 
 All posts already published are grouped on the screen, which at its maximum capacity will display 6 posts on a larger screen and in its smaller screen version will display each post on top of the other.
 
 ![Post Grid 6](./media/post_grid_6.JPG)
 
-### Share buttons
+## Share buttons
 
 To add interactivity to the user, a bar with four buttons is available in the post for sharing through messaging applications.
 
@@ -108,13 +126,13 @@ After clicking on the chosen messenger, the user is taken to a page of the given
 
 ![Share Buttons](./media/share_buttons.JPG)
 
-### Fotter
+## Fotter
 
 In this section we find the details of the blog developer and links to their social networks.
 
-![Footer](./media/Footer.JPG)
+![Footer](./media/footer.JPG)
 
-### Admin Site
+## Admin Site
 
 Here we can find everything that is available to the Admin, from the maintenance of emails, groups, users, comments, posts, attachments and registered sites, social accounts and other CRUD features (Create, Read, Update and Delete).
 
@@ -124,7 +142,7 @@ For better maintenance of all the functions of the admin site and to make everyt
 
 ![Footer](./media/admin_site.JPG)
 
-### Post Detail
+## Post Detail
 
 When clicking on one of the posts, the user is redirected to a page where the selected post is displayed in full, with its title, author, date and time of posting.
 
@@ -138,7 +156,7 @@ A text box is displayed at the bottom right of the screen so that the user can i
 
 ![Post Detail](./media/Post_detail.JPG)
 
-### Likes and Likes Counter
+## Likes and Likes Counter
 
 A like button is available to the user logged in and viewing a specific post. By clicking on the heart icon, the user interacts with the author leaving the icon filled in red, and if he wants to undo the action, just click again and the icon will return to its initial empty state.
 
@@ -146,7 +164,7 @@ A likes counter is visible for everyone to see the number of times users interac
 
 ![Likes](./media/likes.JPG)
 
-### Comments, Comments Counter and Comments Box
+## Comments, Comments Counter and Comments Box
 
 A comment counter is visible for everyone to see the number of times users have interacted by leaving a personal comment for the author of the post.
 
@@ -160,7 +178,7 @@ After writing the comment, the user must click on the submit button and then it 
 
 ![Comments Box](./media/comments_box.JPG)
 
-## Features to Increment
+# Features to Increment
 
 - Option to login through social networks and other services, like GMail, Outlook, Github, etc.
 - More options for interaction with the content for the user, such as being able to interact with gifs, emoticons and images through the comment box.
@@ -195,12 +213,6 @@ The same cannot be seen when using a computer and my browser's inspect mode to s
 Another bug that could be seen was that when using small screens the post image is shown on the cover but not on the post itself after opening. However, this should not be considered a bug, just a limitation for this screen size and possibly adjusted by creating a specific mediaquery for smaller screens.
 
 ![Mobile](./media/mobile_version.JPG)
-
-# Languages Used
-
-- [Python](https://en.wikipedia.org/wiki/Python_(programming_language));
-- [HTML5](https://en.wikipedia.org/wiki/HTML);
-- [CSS3](https://en.wikipedia.org/wiki/CSS).
 
 # Deployment
 
