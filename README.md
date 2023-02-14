@@ -58,7 +58,7 @@ In this blog a base template from the Code Institute was used, adding to it code
 
 These two processes are important and bring security to the blog. To implement these functions, Allauth was used, which as described on its website as "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
 
-### Sign Up, Login and Logout
+### Sign Up, Sign In and Sign Out
 
 Therefore, Allauth allows the blog to require users to register using a basic form, and after that they can sign in and start interacting with the site in a secure way. It also allows the administrator (logged in as such) to keep all blog functions secure, such as deleting offensive comments. So to use the blog it is necessary to sign up, to sign in, and once logged in it is possible to sign out.
 
@@ -161,32 +161,49 @@ After writing the comment, the user must click on the submit button and then it 
 ![Comments Box](./media/comments_box.JPG)
 
 ## Features to Increment
+
 - Option to login through social networks and other services, like GMail, Outlook, Github, etc.
 - More options for interaction with the content for the user, such as being able to interact with gifs, emoticons and images through the comment box.
 - Added an area for the Author's profile, with a brief description and photo.
 
-# Tests
+# Tests and Bugs
+
+Tests were done along each step of the implementation of new features. In general, they were always easily run because they were just long lines or lack/excess space in the lines of code.
+
+Regarding the operation of the blog, all the bugs found were caused by writing errors in the codes and were soon corrected after some trials and errors.
+
+The use of debugging errors was always done within the project terminal and the generated logs were always quickly corrected.
+
+Most of these errors happened during the implementation of new urls, again mostly due to typos quickly corrected before starting to implement other new functionality.
 
 Python syntax checker from Extends Class and Python style guide checker from pycodestyle 2.9.1 were used to test, verify and validate code written in python.
 
-Flake8 used and do not show any serious problems found other than "unused" or "line too long".
-
-CI Python Linter from Code Institute was used to test if my python code complies with PEP8 and succeeded.
-
-No errors were returned from both.
-
-![CI Python Linter](./media/ci_python_linter.JPG)
-
 ![Python Terminal](./media/python_code_errors.JPG)
+
+Flake8 used and do not show any serious problems found other than "unused" or "line too long".
 
 ![Flake8](./media/flake8_python_test.JPG)
 
+CI Python Linter from Code Institute was used to test if my python code complies with PEP8 and succeeded.
+
+![CI Python Linter](./media/ci_python_linter.JPG)
+
+Test using my own mobile showed two bugs that don't always show up. In some situations, after zooming out and zooming in on the mobile screen, the like and comment icons are very close or overlapping. The second bug also happens in the same circumstance, but the sharing buttons disappear from the screen.
+
+The same cannot be seen when using a computer and my browser's inspect mode to simulate the same circumstances. Even zooming in and out nothing changed the distribution of the buttons or made the share buttons disappear.
+
+Another bug that could be seen was that when using small screens the post image is shown on the cover but not on the post itself after opening. However, this should not be considered a bug, just a limitation for this screen size and possibly adjusted by creating a specific mediaquery for smaller screens.
+
+![Mobile](./media/mobile_version.JPG)
+
 # Languages Used
+
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language));
 - [HTML5](https://en.wikipedia.org/wiki/HTML);
 - [CSS3](https://en.wikipedia.org/wiki/CSS).
 
 # Deployment
+
 This blog was deployed using Code Institute's mock terminal for Heroku.
 - First fork or clone this repository
 - Create a new Heroku app
@@ -203,6 +220,7 @@ The full file was also deployed in my GitHub repository. The steps are as follow
 The link to the deployed website at GitHub is: https://github.com/iurjoh/Build-a-blog/
 
 # Credits
+
 Here will be the sites that helped me find everything I needed to develop my work, including research and material sources.
 
 ## Content
