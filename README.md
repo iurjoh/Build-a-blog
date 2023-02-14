@@ -240,7 +240,7 @@ Here will be the sites that helped me find everything I needed to develop my wor
 ## Content
 
 Sites such as:
-- [Stack Overflow](https://stackoverflow.co/) were used at various times to clear up recurring doubts,
+- [Stack Overflow](https://stackoverflow.co/) were used at various times to clear up recurring doubts;
 - [Code Institute](https://learn.codeinstitute.net/) to review material of study explanatory videos and guides on how to set up a complete website;
 - [GitHub](https://github.com/) to better understand other projects;
 - [Google](https://www.google.com) for more information on subjects related to the that I had to study during the creation of the site;
