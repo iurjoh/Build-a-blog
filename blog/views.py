@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
@@ -88,3 +88,54 @@ class PostShare(View):
             post.shares.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+class PostEdit(View):
+    def get(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        # Perform any necessary logic for the edit form
+        form = PostForm(instance=post)
+        return render(request, "post_edit", {"post": post, "form": form})
+
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Post edited successfully.")
+        else:
+            messages.error(request, "Error editing post.")
+
+        return redirect("post_detail", slug=slug)
+
+
+class PostDelete(View):
+    def get(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        # Perform any necessary logic for the delete confirmation page
+        return render(request, "post_delete", {"post": post})
+
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        post.delete()
+        messages.success(request, "Post deleted successfully.")
+        return redirect('home')
+
+
+class PostCreate(View):
+    def get(self, request, *args, **kwargs):
+        # Perform any necessary logic for the create form
+        form = PostForm()
+        return render(request, "post_create", {"form": form})
+
+    def post(self, request, *args, **kwargs):
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            messages.success(request, "Post created successfully.")
+            return redirect("post_detail", slug=post.slug)
+        else:
+            messages.error(request, "Error creating post.")
+
+        return render(request, "post_create", {"form": form})
