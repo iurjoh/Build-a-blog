@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -92,9 +93,8 @@ class PostShare(View):
 class PostEdit(View):
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
-        # Perform any necessary logic for the edit form
         form = PostForm(instance=post)
-        return render(request, "post_edit", {"post": post, "form": form})
+        return render(request, "post_edit.html", {"post": post, "form": form})
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -109,11 +109,6 @@ class PostEdit(View):
 
 
 class PostDelete(View):
-    def get(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        # Perform any necessary logic for the delete confirmation page
-        return render(request, "post_delete", {"post": post})
-
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         post.delete()
@@ -123,9 +118,8 @@ class PostDelete(View):
 
 class PostCreate(View):
     def get(self, request, *args, **kwargs):
-        # Perform any necessary logic for the create form
         form = PostForm()
-        return render(request, "post_create", {"form": form})
+        return render(request, "post_create.html", {"form": form})
 
     def post(self, request, *args, **kwargs):
         form = PostForm(request.POST)
@@ -134,7 +128,7 @@ class PostCreate(View):
             post.author = request.user
             post.save()
             messages.success(request, "Post created successfully.")
-            return redirect("post_detail", slug=post.slug)
+            return redirect("post_detail.html", slug=post.slug)
         else:
             messages.error(request, "Error creating post.")
 
