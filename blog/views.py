@@ -128,8 +128,8 @@ class PostCreate(View):
             post.author = request.user
             post.save()
             messages.success(request, "Post created successfully.")
-            return redirect("post_detail.html", slug=post.slug)
+            return redirect(reverse('post_detail', args=[post.slug]))
         else:
             messages.error(request, "Error creating post.")
 
-        return render(request, "post_create", {"form": form})
+        return render(request, "post_create.html", args=[post.slug])
