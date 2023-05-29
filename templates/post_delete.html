@@ -5,6 +5,6 @@
   <p>Are you sure you want to delete the post "{{ post.title }}"?</p>
   <form method="post">
     {% csrf_token %}
-    <button type="submit">Delete</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
   </form>
 {% endblock %}
