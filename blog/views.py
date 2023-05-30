@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Post
-from .forms import CommentForm, PostForm
+from .models import Post, Contact
+from .forms import CommentForm, PostForm, ContactForm
+from django.utils.text import slugify
 
 
 class PostList(generic.ListView):
@@ -126,10 +127,30 @@ class PostCreate(View):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            post.slug = slugify(post.title)  # Generate the slug based on the title
             post.save()
             messages.success(request, "Post created successfully.")
             return redirect(reverse('post_detail', args=[post.slug]))
         else:
             messages.error(request, "Error creating post.")
 
-        return render(request, "post_create.html", args=[post.slug])
+        return render(request, "post_create.html", {"form": form})
+
+
+class PostContact(View):
+    def get(self, request):
+        form = ContactForm()
+        return render(request, 'post_contact.html', {'form': form})
+
+    def post(self, request):
+        form = ContactForm(request.POST, user=request.user)
+        if form.is_valid():
+            # Save form data as a Contact instance
+            contact = form.save()  # The name field will be pre-filled with the logged-in user's name
+
+            # Perform other actions (e.g., sending email)
+
+            messages.success(request, 'Your message has been sent successfully.')
+            return redirect('home')
+
+        return redirect('home')
