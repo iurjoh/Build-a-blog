@@ -196,21 +196,45 @@ By default, for frontend users, the post status will not be optional, so it will
 
 ## Edit Post Form
 
+When the user is logged in and wants to edit a post of his own, it will be possible to click on the blue button (Pen and Papper icon), displayed in the icon bar just below the text in the body of the post, to edit it. It will then be redirected to a form.
 
+In this form, the user can enter information in fields such as: title, image - where he can use the image already present or choose to upload a new one to replace it, excerpt and content.
 
-![Post Form](./media/comments_counter.JPG)
+By confirming the "Update" button, this post will be edited/republished. Then the user will be redirected to your post page with all the changes made and saved.
+
+![All Buttons](./media/all%20buttons.JPG)
+
+![Edit Button](./media/edit%20button.JPG)
+
+![Edit Form](./media/edit%20form.JPG)
 
 ## Delete Post
 
+When the user is logged in and wants to delete a post of his/her authorship, it will be possible to click on the red button (trash can), displayed in the icon bar just below the text in the body of the post, to delete this post permanently. 
 
+Then, he will receive a confirmation message "Are you sure you want to delete this post?", if he clicks OK, he will be confirming and deleting his post.
 
-![Post Form](./media/comments_counter.JPG)
+Upon confirming by clicking the "OK" button, this post will be permanently deleted. Then, the user will be redirected to the home page where all posts will be displayed, except for the excluded ones.
+
+![Delete Button](./media/delete%20button.JPG)
+
+![Delete Message](./media/delete%20message.JPG)
 
 ## Contact Me Form
 
+If the user is logged in, when entering one of the posts, will have a detailed view of all the information contained therein. If the user wants to contact the creator of the post, he can comment publicly and wait for his comment to be accepted by the admin.
 
+However, to talk about something directly with the creator of the post directly and privately, the user has a "Contact Me" button positioned just below the comments section.
 
-![Post Form](./media/comments_counter.JPG)
+By clicking on this button, you will be redirected to a form with email, subject and message fields. Once completed, the user will click on the "Send Message" button.
+
+Then, the user will be redirected to the home page where all posts will be displayed.
+
+![Contact Button](./media/contact%20me%20button.JPG)
+
+![Contact Place](./media/contact%20me%20place.JPG)
+
+![Contact Form](./media/contact%20me%20form.JPG)
 
 # Features to Increment
 
@@ -218,13 +242,17 @@ By default, for frontend users, the post status will not be optional, so it will
 - More options for interaction with the content for the user, such as being able to interact with gifs, emoticons and images through the comment box.
 - Added an area for the Author's profile, with a brief description and photo.
 
-# Tests and Bugs
+# Bugs
+
+During the development of this project some bugs were found. The vast majority of bugs have usually been caused by mispelling or misuse of Django library and add-on features, such as the use of Bootstrap.
+
+All errors were duly corrected throughout development with the help of proper documentation regarding each item. Tools such as the Code Institute Slack channel, help from tutors of this same course, sites such as Stack Overflow and other internet forums were also used.
+
+In the final stage of development only one bug persisted. The issue seems to be related to the Bootstrap JavaScript library conflicting with the logout functionality. It's possible that the data-bs-toggle and data-bs-dismiss attributes are causing unintended behavior when clicked. So by choice of this developer, the term that caused this bug was removed from the code and so no other problem related to this malfunction was found.
+
+# Tests
 
 Tests were done along each step of the implementation of new features. In general, they were always easily run because they were just long lines or lack/excess space in the lines of code.
-
-Regarding the operation of the blog, all the bugs found were caused by writing errors in the codes and were soon corrected after some trials and errors.
-
-The use of debugging errors was always done within the project terminal and the generated logs were always quickly corrected.
 
 Most of these errors happened during the implementation of new urls, again mostly due to typos quickly corrected before starting to implement other new functionality.
 
