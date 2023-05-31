@@ -42,6 +42,10 @@ In this blog a base template from the Code Institute was used, adding to it code
 - Create a Like Function
 - Create a Post Share Function
 - Create Warning Messages
+- Create a Creat Post Front End Function
+- Create an Edit Post Front End Function
+- Create a Delete Post Front End Function
+- Create a Contact Me Front End Function
 - Test Blog
 - Fixing Bugs
 - Final Deployment
