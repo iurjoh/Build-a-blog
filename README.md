@@ -182,6 +182,36 @@ After writing the comment, the user must click on the submit button and then it 
 
 ![Comments Box](./media/comments_box.JPG)
 
+## Create Post Form
+
+When the user is logged in and wants to create a new post, it will be possible to click on "Create post" displayed on the menu bar and he will be redirected to a form.
+
+In this form, the user can insert information in fields such as: title, image - where he can use the image default or choose to upload a new one, excerpt and content.
+
+By default, for frontend users, the post status will not be optional, so it will always be "published". By confirming the "Create post" button, this post will be published and the user will be redirected to your new published post page.
+
+![Create Menu Bar](./media/create%20post%20menu%20bar.JPG)
+
+![Create Post Form](./media/create%20post%20form.JPG)
+
+## Edit Post Form
+
+
+
+![Post Form](./media/comments_counter.JPG)
+
+## Delete Post
+
+
+
+![Post Form](./media/comments_counter.JPG)
+
+## Contact Me Form
+
+
+
+![Post Form](./media/comments_counter.JPG)
+
 # Features to Increment
 
 - Option to login through social networks and other services, like GMail, Outlook, Github, etc.
