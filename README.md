@@ -6,6 +6,34 @@ This is a blog made to demonstrate my basic knowledge acquired in the Code Insti
 
 ![Build-a-Blog](./media/build-a-blog-mockup.JPG)
 
+## Table of Contents
+
+- [Languages Used](#languages-used)
+- [Project Prerequisites](#project-prerequisites)
+- [Development Stages](#development-stages)
+- [Installed Libraries, APIs, and Other Services](#installed-libraries-apis-and-other-services)
+- [Auxiliary Tools](#auxiliary-tools)
+- [Existing Features](#existing-features)
+  - [Authentication and Authorization](#authentication-and-authorization)
+  - [Sign Up, Sign In, and Sign Out](#sign-up-sign-in-and-sign-out)
+  - [Header & Menu](#header--menu)
+  - [Toggler Button](#toggler-button)
+  - [Warning Messages](#warning-messages)
+  - [Post Area](#post-area)
+  - [Share Buttons](#share-buttons)
+  - [Footer](#footer)
+  - [Admin Site](#admin-site)
+  - [Post Detail](#post-detail)
+  - [Likes and Likes Counter](#likes-and-likes-counter)
+  - [Comments, Comments Counter, and Comments Box](#comments-comments-counter-and-comments-box)
+  - [Create Post Form](#create-post-form)
+  - [Edit Post Form](#edit-post-form)
+  - [Delete Post](#delete-post)
+  - [Contact Me Form](#contact-me-form)
+- [Features to Increment](#features-to-increment)
+- [Bugs](#bugs)
+- [Tests](#tests)
+
 # What exactly is Build-a-Blog?
 
 It is a blog that has in its posts the step by step of how I felt when I was developing this project. So in a way it is a diary of how I felt about the project at each step. Thus, other young developers can sign up, and then have access to the posts, being able to read, interact with the content through likes, comments and even share the posts with whoever they want.
