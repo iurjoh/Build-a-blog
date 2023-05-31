@@ -37,7 +37,7 @@ ALLOWED_HOSTS = [
     "iurjoh-devblog.herokuapp.com",
     "localhost",
     'e539-193-150-228-177.eu.ngrok.io',
-    "8000-iurjoh-buildablog-ydk5vsxsw6u.ws-eu98.gitpod.io"
+    "8000-iurjoh-buildablog-hzz9ihb9gop.ws-eu98.gitpod.io"
 ]
 
 # Application definition

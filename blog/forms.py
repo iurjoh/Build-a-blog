@@ -1,12 +1,10 @@
 from .models import Comment, Post, Contact
 from django import forms
 
-
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
-
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -14,11 +12,20 @@ class PostForm(forms.ModelForm):
         fields = ("title", "featured_image", "excerpt", "content",)
 
     def __init__(self, *args, **kwargs):
-        user = kwargs.pop('user', None)  # Get the 'user' argument if provided
+        self.user = kwargs.pop('user', None)  # Get the 'user' argument if provided
         super().__init__(*args, **kwargs)
-        if user and not user.is_staff:
-            del self.fields['status']
 
+    def save(self, commit=True):
+        post = super().save(commit=False)
+
+        # Set the user if available
+        if self.user:
+            post.author = self.user
+
+        if commit:
+            post.save()
+
+        return post
 
 class ContactForm(forms.ModelForm):
     class Meta:
