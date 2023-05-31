@@ -99,8 +99,11 @@ class PostEdit(View):
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
+            # Check if the featured_image field has a new value
+            if 'featured_image' in request.FILES:
+                post.featured_image = request.FILES['featured_image']
             form.save()
             messages.success(request, "Post edited successfully.")
         else:
@@ -137,7 +140,6 @@ class PostCreate(View):
             messages.error(request, "Error creating post.")
 
         return render(request, "post_create.html", {"form": form})
-
 
 
 class PostContact(View):
