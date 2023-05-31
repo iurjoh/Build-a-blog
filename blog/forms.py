@@ -11,7 +11,13 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ("title", "featured_image", "excerpt", "content", "status",)
+        fields = ("title", "featured_image", "excerpt", "content",)
+
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)  # Get the 'user' argument if provided
+        super().__init__(*args, **kwargs)
+        if user and not user.is_staff:
+            del self.fields['status']
 
 
 class ContactForm(forms.ModelForm):

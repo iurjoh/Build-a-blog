@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
     "iurjoh-devblog.herokuapp.com",
     "localhost",
     'localhost',
+    "localhost"
 ]
 
 # Application definition

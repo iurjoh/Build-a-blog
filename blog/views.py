@@ -119,15 +119,17 @@ class PostDelete(View):
 
 class PostCreate(View):
     def get(self, request, *args, **kwargs):
-        form = PostForm()
+        form = PostForm(user=request.user)  # Pass the user to the form
         return render(request, "post_create.html", {"form": form})
 
     def post(self, request, *args, **kwargs):
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES, user=request.user)  # Pass the user to the form
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
             post.slug = slugify(post.title)  # Generate the slug based on the title
+            post.status = 1  # Set status to Published
+
             post.save()
             messages.success(request, "Post created successfully.")
             return redirect(reverse('post_detail', args=[post.slug]))
@@ -135,6 +137,7 @@ class PostCreate(View):
             messages.error(request, "Error creating post.")
 
         return render(request, "post_create.html", {"form": form})
+
 
 
 class PostContact(View):
