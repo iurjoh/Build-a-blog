@@ -2,7 +2,7 @@
 
 Visit the blog [here](https://iurjoh-devblog.herokuapp.com/)
 
-This is a blog made to demonstrate my basic knowledge acquired in the Code Institute's Full Stack developer course. In this project a fully functional blog was created using Django and its libraries, Bootsrap and other tools.
+This is a blog made to demonstrate my basic knowledge acquired in the Code Institute's Full Stack developer course. In this project a fully functional blog was created using Django and its libraries, Bootstrap and other tools.
 
 ![Build-a-Blog](./media/build-a-blog-mockup.JPG)
 
