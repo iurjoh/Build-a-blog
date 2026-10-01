@@ -1,8 +1,14 @@
 # Build-a-Blog
 
-Visit the blog [here](https://iurjoh-devblog.herokuapp.com/)
+[Português (Brasil)](README.pt-BR.md) | **English**
 
-This is a blog made to demonstrate my basic knowledge acquired in the Code Institute's Full Stack developer course. In this project a fully functional blog was created using Django and its libraries, Bootstrap and other tools.
+**Documentation reviewed on 2026-10-01.** Planning, screenshots and tests below are the original historical record. Tests were not rerun in this update.
+
+> **Security before republication:** the current edit and delete views in `blog/views.py` do not check login or ownership on the server, and the URL configuration calls them directly. Hidden frontend buttons are not authorization. Fix and test these controls before deploying with real data. This update changes documentation only.
+
+**Historical deployment URL:** https://iurjoh-devblog.herokuapp.com/ returned HTTP 404 with Heroku's "No such app" page on 2026-10-01. No active deployment at this address was confirmed.
+
+This is a blog made to demonstrate my basic knowledge acquired in the Code Institute's Full Stack developer course. In this learning project a blog was created using Django and its libraries, Bootstrap and other tools.
 
 ![Build-a-Blog](./media/build-a-blog-mockup.JPG)
 
@@ -106,7 +112,7 @@ In this blog a base template from the Code Institute was used, adding to it code
 # Existing Features
 ## Authentication and Authorization
 
-These two processes are important and bring security to the blog. To implement these functions, Allauth was used, which as described on its website as "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
+Authentication and authorization were design goals. The current edit/delete views do not enforce the ownership restriction described below. To implement these functions, Allauth was used, which as described on its website as "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
 
 ## Sign Up, Sign In and Sign Out
 
@@ -308,6 +314,8 @@ Another bug that could be seen was that when using small screens the post image 
 
 # Deployment
 
+Historical notes only. Heroku availability and current pricing were not validated. GitHub Pages does not execute this Django backend; the GitHub URL below is the source repository, not a running website.
+
 This blog was deployed using Code Institute's mock terminal for Heroku.
 - First fork or clone this repository
 - Create a new Heroku app
@@ -356,3 +364,8 @@ Sites such as:
 
 ## Acknowledgements
 - My mentor for continuous helpful feedback.
+
+
+## Review notes and license
+
+No root LICENSE file was found in this review. Preserve Code Institute and other third-party credits and terms; this update does not apply MIT over third-party code. The complete Portuguese version documents current permission limits, separates historical tests from new verification, and explains local setup constraints. `PostContact` currently saves a Contact record; its email-delivery comment is not an implemented mail send. New snapshots belong in `docs/assets/` with dates and fictional data; existing `media/` images remain historical evidence.
