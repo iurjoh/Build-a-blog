@@ -1,3 +1,5 @@
+> **ARCHIVE / HISTORICAL RECORD.** Final project of one of the Code Institute Full Stack course phases, kept public as a record of my learning and progress. It is NOT maintained and is NOT meant to be deployed as is. Known limitations (documented, not hidden): edit/delete views lack server-side login/ownership checks; Django 3.2 and other dependencies are end-of-life; no automated tests. The original Heroku deployment no longer exists and the original database was removed from the repository. Modern projects: https://github.com/iurjoh
+
 # Build-a-Blog
 
 [Português (Brasil)](README.pt-BR.md) | **English**

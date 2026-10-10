@@ -1,3 +1,5 @@
+> **ARQUIVO / REGISTRO HISTÓRICO.** Projeto final de uma das fases do curso Full Stack do Code Institute, público como registro do meu aprendizado e evolução. NÃO é mantido e NÃO deve ser publicado como está. Limitações conhecidas (documentadas, não escondidas): as views de editar/apagar não checam login/dono no servidor; Django 3.2 e outras dependências estão sem suporte; sem testes automatizados. O deploy original no Heroku não existe mais e o banco de dados original foi removido do repositório. Projetos atuais: https://github.com/iurjoh
+
 # Build-a-Blog
 
 **Português (Brasil)** | [English](README.md)

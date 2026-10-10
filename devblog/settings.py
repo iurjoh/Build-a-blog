@@ -34,10 +34,8 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
-    "iurjoh-devblog.herokuapp.com",
     "localhost",
-    'localhost',
-    "localhost"
+    "127.0.0.1",
 ]
 
 # Application definition
