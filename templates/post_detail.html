@@ -167,6 +167,7 @@
         </form>
       </div>
     </div>
+    {% if commented or user.is_authenticated %}
     <div class="col-md-4 card mb-4 mt-3">
       <div class="card-body">
         
@@ -185,6 +186,7 @@
         {% endif %} {% endif %}
       </div>
     </div>
+    {% endif %}
   </div>
 </div>
 {% endblock content %}
