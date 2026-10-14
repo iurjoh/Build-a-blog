@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from .models import Post, Contact
 from .forms import CommentForm, PostForm, ContactForm
 from django.utils.text import slugify
@@ -91,14 +93,26 @@ class PostShare(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-class PostEdit(View):
+class PostOwnerRequiredMixin(LoginRequiredMixin):
+    """Check login and ownership before any edit/delete handler can run."""
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return self.handle_no_permission()
+        self.post_object = get_object_or_404(Post, slug=kwargs['slug'])
+        if self.post_object.author_id != request.user.pk:
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+
+class PostEdit(PostOwnerRequiredMixin, View):
     def get(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
+        post = self.post_object
         form = PostForm(instance=post)
         return render(request, "post_edit.html", {"post": post, "form": form})
 
     def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
+        post = self.post_object
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             # Check if the featured_image field has a new value
@@ -112,15 +126,15 @@ class PostEdit(View):
         return redirect("post_detail", slug=slug)
 
 
-class PostDelete(View):
+class PostDelete(PostOwnerRequiredMixin, View):
     def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
+        post = self.post_object
         post.delete()
         messages.success(request, "Post deleted successfully.")
         return redirect('home')
 
 
-class PostCreate(View):
+class PostCreate(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         form = PostForm(user=request.user)  # Pass the user to the form
         return render(request, "post_create.html", {"form": form})
