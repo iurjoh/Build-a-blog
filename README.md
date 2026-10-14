@@ -371,3 +371,16 @@ Sites such as:
 ## Review notes and license
 
 No root LICENSE file was found in this review. Preserve Code Institute and other third-party credits and terms; this update does not apply MIT over third-party code. The complete Portuguese version documents current permission limits, separates historical tests from new verification, and explains local setup constraints. `PostContact` currently saves a Contact record; its email-delivery comment is not an implemented mail send. New snapshots belong in `docs/assets/` with dates and fictional data; existing `media/` images remain historical evidence.
+
+## Technology and effort snapshot
+
+Captured from repository sources on 2026-10-14. This is a source snapshot, not a claim about production versions or the technology available at the original launch.
+
+- **Stack at this snapshot:** Django 3.2.17, django-allauth 0.52.0 and Gunicorn 20.1.0 pinned in requirements.txt. Historical dependencies are not a recommendation for a new production deployment.
+- **Earlier record:** The first surviving requirements.txt (c509240) already pins Django 3.2.17 and Gunicorn 20.1.0.
+- **Observed calendar window:** 2023-02-02 to 2026-10-10: surviving commits reachable from main. Calendar span, not continuous work or time to launch.
+- **Pull requests:** 3 visible PRs: 2 open, 1 closed, captured 2026-10-14 before this documentation change. Closed does not mean merged. Deleted/recreated history is excluded.
+- **Decision and reason:** Server-rendered Django pages keep the academic blog in one application; the archive preserves the learning record without claiming a current hosted release.
+- **Estimated active effort:** unavailable. No reliable time log or bounded work-session reconstruction was established. Commit count and elapsed calendar time are not converted into hours.
+
+Evidence: current dependency/source files named above, retained Git history and the repository PR list. Versions and counts are fixed to this snapshot, not live counters.
