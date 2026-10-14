@@ -242,3 +242,16 @@ Baseado no template e no curso Full Stack da Code Institute. Nenhum `LICENSE` fo
 - Ao mentor, pelo feedback durante o desenvolvimento.
 
 Esses links preservam os créditos históricos, sem afirmar que todos foram verificados agora.
+
+## Retrato da tecnologia e do esforço
+
+Registro das fontes do repositório em 2026-10-14. É um retrato do código, não uma afirmação sobre versões em produção nem sobre a tecnologia disponível no lançamento original.
+
+- **Stack neste registro:** Django 3.2.17, django-allauth 0.52.0 e Gunicorn 20.1.0 fixados em requirements.txt. Dependências históricas não são recomendação para uma nova publicação em produção.
+- **Registro anterior:** O primeiro requirements.txt preservado (c509240) já fixa Django 3.2.17 e Gunicorn 20.1.0.
+- **Janela de calendário observada:** 2023-02-02 a 2026-10-10: commits preservados e alcançáveis em main. Intervalo de calendário, não trabalho contínuo nem prazo até o lançamento.
+- **Pull requests:** 3 PRs visíveis: 2 abertos, 1 fechado, consultados em 2026-10-14 antes desta alteração. Fechado não significa mergeado. Histórico apagado/recriado não entra na contagem.
+- **Decisão e motivo:** Páginas renderizadas pelo Django mantêm o blog acadêmico em uma aplicação; o arquivo preserva o aprendizado sem afirmar uma versão hospedada atual.
+- **Estimativa de esforço ativo:** indisponível. Não foi estabelecido um registro confiável de tempo nem uma reconstrução delimitada das sessões de trabalho. Contagem de commits e tempo de calendário não são convertidos em horas.
+
+Evidências: arquivos de dependências/código citados acima, histórico Git preservado e lista de PRs do repositório. Versões e contagens pertencem a este registro, não são contadores ao vivo.
