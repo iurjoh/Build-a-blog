@@ -1,4 +1,4 @@
-> **ARQUIVO / REGISTRO HISTÓRICO.** Projeto final de uma das fases do curso Full Stack do Code Institute, público como registro do meu aprendizado e evolução. NÃO é mantido e NÃO deve ser publicado como está. Limitações conhecidas (documentadas, não escondidas): as views de editar/apagar não checam login/dono no servidor; Django 3.2 e outras dependências estão sem suporte; sem testes automatizados. O deploy original no Heroku não existe mais e o banco de dados original foi removido do repositório. Projetos atuais: https://github.com/iurjoh
+> **ARQUIVO / REGISTRO HISTÓRICO.** Projeto final de uma das fases do curso Full Stack do Code Institute, público como registro do meu aprendizado e evolução. NÃO é mantido e NÃO deve ser publicado como está. Limitações conhecidas (documentadas, não escondidas): Django 3.2 e outras dependências estão sem suporte; a regressão focada em permissões de posts não é uma auditoria completa de segurança. O deploy original no Heroku não existe mais e o banco de dados original foi removido do repositório. Projetos atuais: https://github.com/iurjoh
 
 # Build-a-Blog
 
@@ -6,9 +6,11 @@
 
 Blog de estudo feito durante o curso Full Stack da Code Institute. As publicações foram pensadas como um diário do desenvolvimento: o que o autor aprendeu e sentiu em cada etapa, com interação por comentários, curtidas e compartilhamento.
 
-**Revisão de documentação:** 01/10/2026. Planejamento, screenshots e testes descritos abaixo vêm do registro original. Nenhum teste foi executado novamente nesta atualização.
+**Revisão de documentação:** 17/10/2026. Planejamento, screenshots e descrições dos testes manuais originais abaixo permanecem históricos. As verificações focadas descritas a seguir foram executadas novamente nesta revisão.
 
-> **Segurança antes de republicar:** as views atuais de edição e exclusão em `blog/views.py` não verificam login ou autoria no servidor, e as rotas as chamam diretamente. Botões escondidos no frontend não substituem autorização. Corrija e teste esses controles antes de disponibilizar o aplicativo com dados reais. Esta atualização altera apenas documentação.
+> **Permissões de posts, código atual:** a PR #23 adicionou verificações no servidor em `blog/views.py`: `PostCreate` exige login e define o usuário autenticado como autor; `PostEdit` e `PostDelete` exigem login e autoria correspondente ao post. Requisições anônimas são redirecionadas ao login, usuários autenticados que não são donos recebem 403, posts inexistentes recebem 404 para usuários autenticados e GET não apaga posts. Esta atualização de documentação não muda código do aplicativo.
+
+**Verificação focada (17/10/2026):** passaram os 10 testes de `blog/test_post_permissions.py`, cobrindo acesso anônimo, não dono, criação/edição/exclusão pelo dono, campos de autor/status forjados, posts inexistentes, segurança de GET na exclusão e CSRF. Também passaram quatro testes separados de rodapé/templates em `blog/tests.py` (14 no total). Usaram usuários/posts inventados, SQLite descartável, armazenamento local, e-mail em memória e URLs Cloudinary simuladas; uploads, contas reais, serviços de produção e o restante do aplicativo não foram auditados. A dependência PostgreSQL `psycopg2` foi omitida desse ambiente de testes somente SQLite; os requisitos do repositório não mudaram. Reprodução: [TESTING_AUTHORIZATION.md](TESTING_AUTHORIZATION.md). Isso não comprova que o Django inteiro seja seguro ou esteja pronto para novo deploy.
 
 **Deploy histórico:** https://iurjoh-devblog.herokuapp.com/ respondeu HTTP 404 com a página Heroku "No such app" em 01/10/2026. Nenhum deploy ativo nesse endereço foi confirmado. O link GitHub do projeto é o repositório de código, não um site Django funcionando.
 
@@ -70,7 +72,7 @@ O layout usa cabeçalho, menu, grade de publicações e páginas de detalhe, for
 
 ### Cadastro, login e logout
 
-Allauth foi usado para cadastro e gerenciamento de contas. O registro original apresenta autenticação como base para interação e administração. A autorização de edição/exclusão declarada no texto não é garantida pelas views atuais.
+Allauth foi usado para cadastro e gerenciamento de contas. O registro original apresenta autenticação como base para interação e administração. As views atuais de criar/editar/apagar aplicam as verificações focadas de login/autoria descritas acima; isso não estende a auditoria às demais interações.
 
 ![Cadastro](./media/signin.JPG)
 ![Login](./media/login.JPG)
@@ -137,14 +139,14 @@ Há contador, campo de texto e envio para moderação. A view exibe comentários
 
 ### Criar publicação
 
-O menu abre formulário de título, imagem, resumo e conteúdo. `PostCreate` define a publicação como publicada e vincula o autor à requisição. Essa observação não substitui testes de autenticação e validação.
+O menu abre formulário de título, imagem, resumo e conteúdo. `PostCreate` define a publicação como publicada e vincula o autor à requisição. Os testes focados acima verificam login e controle de autor/status; não cobrem toda a validação nem uploads.
 
 ![Menu de criação](./media/create%20post%20menu%20bar.JPG)
 ![Formulário de criação](./media/create%20post%20form.JPG)
 
 ### Editar publicação
 
-O planejamento previa edição pelo dono, com título, imagem, resumo e conteúdo. O botão azul abre o formulário. **O código atual da view não verifica autoria; essa restrição precisa ser implementada no servidor.**
+O planejamento previa edição pelo dono, com título, imagem, resumo e conteúdo. O botão azul abre o formulário. **A view atual exige login e autoria no servidor por meio de `PostOwnerRequiredMixin`; usuários autenticados que não são donos recebem 403.**
 
 ![Botões](./media/all%20buttons.JPG)
 ![Botão de edição](./media/edit%20button.JPG)
@@ -152,7 +154,7 @@ O planejamento previa edição pelo dono, com título, imagem, resumo e conteúd
 
 ### Excluir publicação
 
-O planejamento previa exclusão pelo dono com confirmação. **A view atual de exclusão não verifica autoria ou login no servidor.** O diálogo de confirmação não corrige esse limite.
+O planejamento previa exclusão pelo dono com confirmação. **A view atual exige login e autoria no servidor; GET não apaga e um POST sem CSRF válido é rejeitado.** O diálogo visual não substitui esses controles.
 
 ![Botão de exclusão](./media/delete%20button.JPG)
 ![Confirmação de exclusão](./media/delete%20message.JPG)
@@ -201,7 +203,7 @@ A simulação desktop no inspetor não reproduziu os mesmos efeitos. Esses itens
 ![CI Python Linter](./media/ci_python_linter.JPG)
 ![Versão mobile histórica](./media/mobile_version.JPG)
 
-Nenhum desses resultados foi atualizado em 01/10/2026. Antes de reutilizar, teste acesso anônimo, edição/exclusão por não donos, criação de conteúdo, moderação, validação de formulários, mídia e dependências.
+Os resultados manuais históricos não foram repetidos nesta revisão. A regressão focada de 17/10/2026 cobre as permissões de criar/editar/apagar descritas no início. Antes de reutilizar, ainda revise moderação, validação de formulários, mídia, dependências e os demais caminhos do aplicativo.
 
 ## Desenvolvimento local e deploy
 

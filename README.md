@@ -1,12 +1,14 @@
-> **ARCHIVE / HISTORICAL RECORD.** Final project of one of the Code Institute Full Stack course phases, kept public as a record of my learning and progress. It is NOT maintained and is NOT meant to be deployed as is. Known limitations (documented, not hidden): edit/delete views lack server-side login/ownership checks; Django 3.2 and other dependencies are end-of-life; no automated tests. The original Heroku deployment no longer exists and the original database was removed from the repository. Modern projects: https://github.com/iurjoh
+> **ARCHIVE / HISTORICAL RECORD.** Final project of one of the Code Institute Full Stack course phases, kept public as a record of my learning and progress. It is NOT maintained and is NOT meant to be deployed as is. Known limitations (documented, not hidden): Django 3.2 and other dependencies are end-of-life; the focused post-permission regression is not a full security audit. The original Heroku deployment no longer exists and the original database was removed from the repository. Modern projects: https://github.com/iurjoh
 
 # Build-a-Blog
 
 [Português (Brasil)](README.pt-BR.md) | **English**
 
-**Documentation reviewed on 2026-10-01.** Planning, screenshots and tests below are the original historical record. Tests were not rerun in this update.
+**Documentation reviewed on 2026-10-17.** Planning, screenshots and the original manual test descriptions below remain historical. The focused regression checks described next were rerun for this review.
 
-> **Security before republication:** the current edit and delete views in `blog/views.py` do not check login or ownership on the server, and the URL configuration calls them directly. Hidden frontend buttons are not authorization. Fix and test these controls before deploying with real data. This update changes documentation only.
+> **Post permissions, current code:** PR #23 added server-side checks in `blog/views.py`: `PostCreate` requires login and assigns the authenticated user as author; `PostEdit` and `PostDelete` require login and matching post ownership. An anonymous request is redirected to login, a signed-in non-owner receives 403, a missing post receives 404 for a signed-in user, and GET cannot delete a post. This documentation update changes no application code.
+
+**Focused verification (2026-10-17):** all 10 tests in `blog/test_post_permissions.py` passed, covering anonymous access, non-owner access, owner create/edit/delete, forged author/status fields, missing posts, GET-delete safety and CSRF. Four separate footer/template tests in `blog/tests.py` also passed (14 total). Tests used invented users/posts, disposable SQLite, local file storage, in-memory email and mocked Cloudinary URLs; uploads, real accounts, production services and the rest of the application were not audited. PostgreSQL's `psycopg2` dependency was omitted from this SQLite-only test environment; repository requirements were not changed. Reproduction: [TESTING_AUTHORIZATION.md](TESTING_AUTHORIZATION.md). These results do not establish that the whole Django app is secure or ready to redeploy.
 
 **Historical deployment URL:** https://iurjoh-devblog.herokuapp.com/ returned HTTP 404 with Heroku's "No such app" page on 2026-10-01. No active deployment at this address was confirmed.
 
@@ -114,7 +116,7 @@ In this blog a base template from the Code Institute was used, adding to it code
 # Existing Features
 ## Authentication and Authorization
 
-Authentication and authorization were design goals. The current edit/delete views do not enforce the ownership restriction described below. To implement these functions, Allauth was used, which as described on its website as "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
+Authentication and authorization were design goals. The current create/edit/delete views enforce the focused server-side checks described above; the feature descriptions and screenshots below are the historical record. To implement these functions, Allauth was used, which as described on its website as "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
 
 ## Sign Up, Sign In and Sign Out
 
@@ -370,7 +372,7 @@ Sites such as:
 
 ## Review notes and license
 
-No root LICENSE file was found in this review. Preserve Code Institute and other third-party credits and terms; this update does not apply MIT over third-party code. The complete Portuguese version documents current permission limits, separates historical tests from new verification, and explains local setup constraints. `PostContact` currently saves a Contact record; its email-delivery comment is not an implemented mail send. New snapshots belong in `docs/assets/` with dates and fictional data; existing `media/` images remain historical evidence.
+No root LICENSE file was found in this review. Preserve Code Institute and other third-party credits and terms; this update does not apply MIT over third-party code. The complete Portuguese version documents the focused permission checks and remaining review limits, separates historical tests from new verification, and explains local setup constraints. `PostContact` currently saves a Contact record; its email-delivery comment is not an implemented mail send. New snapshots belong in `docs/assets/` with dates and fictional data; existing `media/` images remain historical evidence.
 
 ## Technology and effort snapshot
 
